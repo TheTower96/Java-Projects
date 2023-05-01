@@ -45,7 +45,7 @@ public class Search extends JFrame implements ActionListener{
 	        // Connessione al database MySQL
 	        String url = "jdbc:mysql://localhost:3306/GestioneLibri";
 	        String user = "root";
-	        String password = "Shake411+";
+	        String password = "password";
 	        try (Connection conn = DriverManager.getConnection(url, user, password)) {
 	            // Query di ricerca dei titoli dei libri
 	            String searchQuery = "SELECT titolo FROM libri WHERE titolo LIKE ?";
