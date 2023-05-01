@@ -47,7 +47,7 @@ public class Login extends JFrame implements ActionListener {
 			// CONNETTE AL DATABASE DI MySQL
 			Connection conn =
 					DriverManager.getConnection("jdbc:mysql://localhost:3306/GestioneLibri",
-							"root", "Shake411+");
+							"root", "password");
 			
 			
 			// CREA UN OGGETTO STATEMENT per ESEGUIRE LE QUERY SUL DATABASE
