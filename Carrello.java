@@ -12,7 +12,7 @@ public class Carrello extends JFrame{
 	
 	private static final String DB_URL = "jdbc:mysql://localhost/GestioneLibri";
 	private static final String DB_USER = "root";
-	private static final String DB_PASSWORD = "Shake411+";	
+	private static final String DB_PASSWORD = "password";	
 	
 	private JLabel libroDaAggiungereLabel;
 	private JTextField libroDaAggiungereField;
