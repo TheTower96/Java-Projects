@@ -86,7 +86,7 @@ import javax.swing.text.JTextComponent;
 					try {
 						
 						Connection conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GestioneLibri",
-								"root", "Shake411+");
+								"root", "password");
 							String id = idField.getText();
 							String id_autori = idField.getText();
 							String id_editori = idField.getText();
@@ -150,7 +150,7 @@ import javax.swing.text.JTextComponent;
 						String id_modifica = idField.getText().toString();
 						
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GestioneLibri",
-								"root", "Shake411+");
+								"root", "password");
 						stmt = conn.prepareStatement(sql);
 						stmt.setString(1, id_modifica);
 						stmt.executeUpdate();
@@ -187,7 +187,7 @@ import javax.swing.text.JTextComponent;
 					try {
 						
 						conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GestioneLibri",
-								"root", "Shake411+");
+								"root", "password");
 						stmt = conn.prepareStatement(sql);
 						PreparedStatement stmt1 = conn.prepareStatement(sql1);
 						PreparedStatement stmt2 = conn.prepareStatement(sql2);
