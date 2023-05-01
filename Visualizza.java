@@ -26,7 +26,7 @@ public class Visualizza extends JFrame{
 		try {
 			
 			conn = DriverManager.getConnection("jdbc:mysql://localhost:3306/GestioneLibri",
-					"root", "Shake411+");
+					"root", "password");
 			stmt = conn.createStatement();
 			rs = stmt.executeQuery("SELECT libri.id, libri.titolo, libri.prezzo FROM libri ");
 			
