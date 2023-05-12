@@ -1,0 +1,388 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Gestione Ristorante">
+    <meta name="keywords" content="Software, Ristorante, Applicativo per Ristorante, Gestionale,Gestionale per Ristorante">
+    <meta name="author" content="Salvatore,Giuseppe,Pietro,Antonina">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <!-- Bootstrap CSS/Javascrypt --> 
+     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js" integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js" integrity="sha384-QJHtvGhmr9XOIpI6YVutG+2QOK9T+ZnN4kzFN1RtK3zEFEIsxhlmWl5/YESvpZ13" crossorigin="anonymous"></script>
+    <title>M.V.R.</title>
+    <link rel="shortcut icon" href="Logo.ico" /> 
+    <!--CSS Personale-->
+    <style>
+
+        hr {
+            background-color: rgb(211, 96, 96);
+            color: rgb(209, 88, 94);
+            margin: 5em;
+            opacity: 0;
+                    
+        }
+        .primo_elemento {
+            margin-left: 80px;
+            
+        }
+        h2{
+            text-align: center;
+            margin-bottom: 50px;
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            color: rgb(211, 60, 67); 
+            text-shadow: 2px 2px 2px #333;
+                                
+        }
+        h3{
+            margin-top: 20px;
+            text-shadow: 2px 2px 2px   rgba(218, 130, 15, 0.578); 
+            
+        }
+        h5{
+
+            margin-top: 20px;
+            text-shadow: 1px 1px 1px gray;
+            
+        }
+        h1{
+            color: rgb(211, 60, 67);
+            text-shadow: 2px 2px 2px   #333; 
+
+        }
+        body{
+            background-image: url(Sfondo.jpg);
+            image-rendering: optimizeQuality;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-size: cover;
+        }
+        p {
+            
+            font-family:Verdana, Geneva, Tahoma, sans-serif;
+            border: 10px;
+        }
+        .nav-link:hover{
+                background: rgb(242, 148, 8);
+                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                color:  rgb(255, 0, 0);
+                border-radius: 10%;
+                width: 90px;
+                margin-top: 10px;
+
+        }
+        button{
+            background-color: #f9f7f7;
+            padding: 15px 40px;
+            font-weight: bold;
+            display: flex;
+            font-size: 17px;
+            border-radius: 5px;
+            cursor: pointer;
+            user-select: none;
+            margin: 30px;
+            box-shadow: 0px 10px 0px 0px #333;
+            transition: all 0.1s ease-in-out;           
+        }
+        button:active{
+            transform: translateY(10px);
+            box-shadow: 0 0 0 0 #333;
+        }
+        .to-top{
+          position: fixed;
+          bottom: 16px;
+          right: 32px;
+          width: 50px;
+          height: 50px;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          font-size: 32px;
+          text-decoration: none;
+          opacity: 0;
+          pointer-events: none;
+          transition: all .4s;
+          text-shadow: 2px 2px 2px #333;
+        }
+        .to-top.active{
+          bottom: 32px;
+          pointer-events: auto;
+          opacity: 1;
+          text-shadow: 2px 2px 2px #333;
+          
+        }
+        #img-carosello1{
+          margin: auto;
+          max-width: 100%;
+          height: auto;
+        }
+        @media (max-width: 768px) {
+          #img-carosello1 {
+          max-width: 90%;
+          }
+          }
+        #next,#previous {
+          opacity: 0;
+        }
+        #icona-menu{
+          width: 300px;
+        }
+        .menu{
+          width: 40px;
+          
+        }
+        p{
+          font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+
+        }
+        #video{
+          margin: 0 auto;
+        }
+        #centrato {
+            margin: 0 auto;
+        }
+        .first-text{
+          color: rgb(255, 255, 255);
+            text-shadow: 3px 3px 3px   #333; 
+            font-size:xx-large;
+        }
+        .second-text:before{
+          content: "";
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background-color:#f9f7f7;
+          border-left: 2px solid rgb(255, 0, 0);
+          animation: animate 4s steps(12) infinite;
+         
+
+        }
+        .container .text{
+            position: relative;
+            font-size: 30px;
+            font-weight: 600;
+            background-color: #f9f7f7;
+          
+
+        }
+       
+        @keyframes animate{
+          40%, 60%{
+            left: 100%;
+          }
+          100%{
+            left: 0%;
+          }
+        }
+        #scrittura {
+          width: 510px;
+          height: 100px;
+          background-color:  #f9f7f7;
+          text-align: center;
+        }
+
+
+       
+    </style>
+    
+<!--Script Font-->
+<script src="https://kit.fontawesome.com/facc5d9ec0.js" crossorigin="anonymous"></script>
+<script src="https://kit.fontawesome.com/775f8da036.js" crossorigin="anonymous"></script>
+
+</head>
+<body>    
+    <header>
+      <header id="header-section">
+        <nav class="navbar">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+              <img src="Logo.jpg" alt="Logo" width="120" height="110" class="d-inline-block">           
+            </a>
+            <div>
+              <h1 class="titolo" style="font-family:verdana"><b>MANAGER VISION RESTAURANT</b></h1>
+            </div>
+            <button class="navbar-toggler border-danger " type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link"  href="#slide">Foto</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#caratteristiche">Features</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#video1">Video</a>
+                </li>
+              </ul>
+            </div>
+          </div> 
+        </nav> 
+      </header>
+    </header>
+    <!--Primo elemento pagina-->
+    <br>
+    <section class="primo_elemento">
+    <div class="container-fluid row" style="text-align: center;">
+        <div class="col-md-12"><h1 style="font-family:verdana"><b>Il Software per i ristoratori:<br>gestione online semplice e sicura</b></br></h1></div>
+        <div style="display:flex; justify-content:center; flex-wrap: wrap;">
+          <figure style="margin: 1px;">
+        <div class="col-md-12" style="text-align: center;">
+            <h5 style="font-family:Italic">
+              <b>Manager Vision Restaurant</b> è un software di gestione che offre una vasta gamma di funzionalità per aiutare i proprietari di ristoranti a gestire la loro attività in modo efficace. <br>Con il supporto di Manager Vision, puoi gestire le tue operazioni di ristorazione in modo più efficiente, ridurre gli errori e massimizzare i profitti.<br>
+              Il software è progettato per funzionare come un ecosistema di applicazioni integrate, che offrono funzionalità di registrazione delle vendite, gestione del personale, gestione delle scorte, pianificazione del menu, controllo dei costi, analisi delle prestazioni e molto altro ancora.
+              Inoltre, <b>Manager Vision Restaurant</b> è stato progettato per essere facile da usare, anche per i proprietari di ristoranti senza esperienza informatica. Il software ha un'interfaccia intuitiva e ben organizzata, che consente di navigare facilmente tra le diverse funzionalità.
+            </h5>              
+            <br>
+        </div>
+        <div style="display:flex; justify-content:center; flex-wrap: wrap;">
+        <div class="col-md-10"><img src="tabletapp.jpg" widht="300" height="300"></div>
+          <figure style="margin: 1px;">
+      </div>
+      <div>
+        <br>
+      <a href="#contatti"><button class="btn col-md-2 btn-primary text-center btn-danger">Contattaci</button></a>
+        <a href="#video1"><button class="btn col-md-2 btn-primary text-center btn-danger">Scopri</button></a>
+      </div>   
+    </section>
+    <hr>   
+      <h2 id="slide" ><b>Caratteristiche Principali</b></h2>
+      <hr> 
+      <!--Sezione Slide-->
+    <section  class="secondo_elemento">
+      <div class="row container-fluid">
+       <div id="carouselExampleInterval" class="carousel slide"
+           data-bs-ride="carousel">
+          <div class="carousel-inner">
+            <div class="carousel-item active" data-bs-interval="10000">
+              <img id="img-carosello1" src="Menù.jpeg" class="d-block w-4" alt="...">
+            </div>
+            <div class="carousel-item" data-bs-interval="2000">
+              <img id="img-carosello1" src="Cucina.jpeg" class="d-block w-4" alt="...">
+            </div>
+            <div class="carousel-item">
+              <img id="img-carosello1" src="Cassa.jpeg" class="d-block w-4" alt="...">
+            </div>
+          </div>
+          <button id="previous" class="carousel-control-prev" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+          </button>
+          <button id="next" class="carousel-control-next" type="button" data-bs-target="#carouselExampleInterval" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+          </button>
+        </div>
+      </div>
+     </div>
+    </section>   
+      <!--Caratteristiche principali-->
+<section>
+  <hr> 
+  <h2 id="caratteristiche"><b>Funzioni Principali</b></h2>
+  <div style="text-align:center;">
+    <div style="display:flex; justify-content:center; flex-wrap: wrap;">
+      <figure style="margin: 10px;">
+        <div>
+        <i class="fa-solid fa-utensils fa-bounce fa-2xl" style="color: #000000; height: 30px;"></i>
+      </div>
+        <figcaption><h2><b>Menu</b></h2></figcaption>
+        <p >
+          <b>La classe "Menu" gestisce il menu del ristorante, che contiene diversi elementi come piatti, bevande, dessert, ecc.<br> Ogni elemento del menu ha un nome, una descrizione, un prezzo e una categoria<br> (ad esempio "antipasti", "primi piatti", "secondi piatti", ecc.).<br> La classe "Menu" dovrebbe contenere metodi per aggiungere,  gli elementi del menu.</b>
+        </p>
+      </figure>
+      <figure style="margin: 10px;">
+        <i class="fa-solid fa-kitchen-set fa-bounce fa-2xl" style="color: #000000; height: 30px;"></i>
+        <figcaption><h2><b>Cucina</b></h2></figcaption>
+      </p>
+      <p>
+          <b>Quando un cliente fa un ordine, la classe "Cucina" riceve l'ordine dal gestore del ristorante e lo prepara.<br>La classe "Cucina" gestisce la preparazione degli ordini.<br> e traccia dello stato dell'ordine<br> (ad esempio, "in preparazione", "pronto per la consegna", ecc.)<br> e lo segnala alla classe "Cassa" quando l'ordine è pronto.</b>
+        </p>
+      </figure>
+      <figure style="margin: 10px;">
+        <i class="fa-solid fa-calculator fa-bounce fa-2xl" style="color: #000000; height: 30px;"></i>
+        <figcaption><h2><b>Cassa</b></h2></figcaption>
+        <p><b>La classe "Cassa" gestisce il pagamento degli ordini.<br>Quando un cliente paga il conto, la classe "Cassa" calcola il totale dell'ordine e gestisce il pagamento.<br> La classe "Cassa" dovrebbe anche tenere traccia delle vendite giornaliere e generare rapporti finanziari.</b>
+        </p>
+      </figure>
+    </div>
+  </div>
+</section>
+
+<!--Sezione video-->
+<hr>
+<section class = "terzo elemento">
+  <h2 id="video1"><b>Presentazione Software</b></h2>
+<div id="video" class="row col-12">
+
+  <video controls poster="/images/w3html5.gif">
+  <source src="movie.mp4" type="video/mp4">
+  <source src="movie.ogg" type="video/ogg">
+  Your browser does not support the video tag.
+</video> 
+
+</div>
+<hr>
+</section>
+<!--form di contatto-->
+<section>
+  <div>
+    <h2 id="contatti"><b>Contattaci</b></h2>
+  </div>
+  <form action="GET">
+    <div id="centrato" class="row col-md-4  ">
+    <div class="form-group">
+        <label for="nome"><b>Nome:</b></label>
+        <input id="nome" type="text" class="form-control" placeholder="Inserisci il tuo nome" required>
+    </div>
+    <div class="form-group">
+        <label for="cognome"><b>Cognome:</b></label>
+        <input id="cognome" type="text" class="form-control" placeholder="Inserisci il tuo cognome" required>
+    </div>
+    <div class="form-group">
+        <label for="email"><b>Email:</b></label>
+        <input id="email" type="email" class="form-control" placeholder="Inserisci la tua email" required>
+    </div>
+    <div class="form-group">
+        <label for="numero"><b>Numero</b></label>
+        <input id="numero" type="number" class="form-control" placeholder="+39" required>
+    </div>          
+  </div>
+  </div>
+  <div class="col-12" style="text-align: center;">
+    <button id="contact-button" type="submit" class="btn btn-danger col-2">Invia</button>
+  </div>
+</form>
+</section>
+<hr>
+<!--Footer-->
+<section>
+<div class="row">
+  <div class="container col-12 text-center" >
+    <p>© Manager Vision Restaurant • All rights reserved.</p><span></span>
+  </div>
+</div>
+</section>
+
+   <!--Bottone per tornare su-->
+   <a href="#" class="to-top">
+    <i class="fa-solid fa-circle-up fa-lg" style="color: #ff2600;"></i>
+  </a>
+
+ 
+<script>
+  const toTop = document.querySelector(".to-top");
+
+ window.addEventListener("scroll", () => {
+    if(window.pageYOffset > 10) {
+        toTop.classList.add("active");
+    } else{
+        toTop.classList.remove("active");
+    }
+})
+</script>
+</body>
+</html>
